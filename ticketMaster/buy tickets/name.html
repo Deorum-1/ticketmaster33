@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+    body {
+        padding: 0%;
+        margin: 0;
+        font-family: "Rubik", sans-serif;
+        box-sizing: border-box;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+    
+    .topic {
+        text-align: center;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    
+    .line {
+        width: 100%;
+        height: 0.1px;
+        background: #a09e9e;
+        margin-top: 10px;
+    }
+    
+    .select p {
+        font-size: 14px;
+        font-weight: 300;
+    }
+    
+    .select span {
+        font-size: 14px;
+        color: #a09e9e;
+    }
+    
+    .select span code {
+        font-size: 14px;
+        font-weight: 300;
+        color: #000;
+    }
+    
+    .inputs p {
+        color: #a09e9e;
+        font-weight: 300;
+    }
+    
+    .inputs input {
+        width: 100%;
+        padding: 10px 0;
+        border: 1px solid #000;
+        margin-top: -5px;
+    }
+    
+    .text {
+        width: 100%;
+        height: 100px;
+        padding: 10px 0;
+        border: 1px solid #0c0b0b;
+    }
+    
+    .back {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #a09e9e;
+        margin-top: 20px;
+        padding: 20px;
+    }
+    
+    .back a {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 400;
+        color: blue;
+    }
+    
+    .back button {
+        font-size: 20px;
+        background: blue;
+        padding: 10px 20px;
+        color: #ffffff;
+        outline: 0;
+        border: 0;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <p class="topic">Tickets</p>
+        <div class="line"></div>
+
+        <div class="select">
+            <p>0 Ticket Selected</p>
+            <span>Sec <code>104</code> Row <code>5</code></span>
+        </div>
+
+        <div class="inputs">
+            <label for="name">
+                <p>Email or Mobile Number</p>
+                <input type="text">
+            </label>
+            <label for="name">
+                <p>First Name</p>
+                <input type="text">
+            </label>
+            <label for="name">
+                <p>Last Name</p>
+                <input type="text">
+            </label>
+            <label for="name">
+                <p>Note</p>
+                <div class="text"></div>
+            </label>
+        </div>
+    </div>
+
+    <div class="back">
+        <a href="/buy tickets/newticket.html">
+            <p>&lt; BACK</p>
+        </a>
+        <a href="/buy tickets/transfer.html">
+            <button>Transfer</button>
+        </a>
+    </div>
+</body>
+
+</html>
+
+</html>
+
+</html>

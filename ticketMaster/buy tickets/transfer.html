@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>transfer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+        body {
+            position: relative;
+            margin: 0;
+            height: 100vh;
+            width: 100%;
+            height: max-content;
+            padding: 0;
+            font-family: "Rubik", sans-serif;
+            background-color: #ffffff;
+            box-sizing: border-box;
+        }
+        
+        .carousel {
+            display: flex;
+            /* width: 1080px; */
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            user-select: none;
+            gap: 50px;
+            padding: 0 40px;
+            margin-top: 20px;
+        }
+        
+        .carousel-item {
+            width: 350px;
+        }
+        
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .header {
+            width: 100;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            gap: 5px;
+            background: #343434;
+            color: #ffffff;
+            padding: 10px 20px;
+            justify-content: space-between;
+            z-index: 9999;
+        }
+        
+        .header a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 2rem;
+        }
+        
+        .head {
+            text-align: center;
+            font-size: 14px;
+            line-height: 0;
+        }
+        
+        .head span {
+            font-size: 12px;
+        }
+        
+        .line {
+            width: 100%;
+            height: 0.1px;
+            background: #a09e9e;
+            margin-top: 10px;
+        }
+        
+        .slide {
+            padding-top: 10px;
+            position: relative;
+            width: 300px;
+            height: max-content;
+            margin-top: 30px;
+            border-radius: 10px;
+            background: grey;
+            box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        
+        .segment {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            padding: 10px 40px 30px;
+            background: darkgrey;
+            line-height: 0.8;
+        }
+        
+        .segment p {
+            font-style: bold;
+            font-weight: 400;
+            color: #ffffff
+        }
+        
+        .segment span {
+            color: #ffffff;
+            font-weight: 200;
+        }
+        
+        .topic {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 200;
+            margin-top: 10px;
+        }
+        
+        .carousel-item hr {
+            height: 0.1px;
+            background-color: #3F4243;
+        }
+        
+        .hero-event {
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            height: 180px;
+            background-repeat: no-repeat;
+            background-image: url("/images/assets/billy.png");
+            background-size: 100% 300px;
+            padding: 20px;
+            color: #ffffff;
+        }
+        
+        .hero-event .check {
+            background: #ffffff;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: green;
+        }
+        
+        .hero-event p {
+            font-size: 14px;
+            font-weight: 400;
+        }
+        
+        .hero-event span {
+            font-size: 12px;
+            margin-top: -10px;
+            font-weight: 200;
+        }
+        
+        .lower {
+            color: white;
+            background: green;
+            margin-top: -15px;
+            font-weight: 400;
+            padding: 20px;
+        }
+        
+        .sub {
+            background: #ffffff;
+            height: 140px;
+            margin-top: -20px;
+            padding: 20px;
+            border-radius: 0px 0px 10px 10px;
+            line-height: 0.5;
+        }
+        
+        .sub p {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .sub span {
+            font-size: 12px;
+        }
+        
+        .button-ticket {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background-color: #013FBD;
+            color: #ffffff;
+            border: 0;
+            padding: 10px 80px;
+        }
+        
+        .button-ticket img {
+            object-fit: contain;
+            width: 20px;
+            filter: brightness(100%) contrast(100%) saturate(0);
+        }
+        
+        .details a {
+            text-decoration: none;
+            font-size: 14px;
+            color: #013FBD;
+            font-weight: 300;
+        }
+        
+        .line2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 1.5px;
+            width: 90%;
+            background: #013FBD;
+            margin: 20px 20px 0;
+        }
+        
+        .scroll {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background: #3F4243;
+        }
+        
+        .scrolls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .buttons {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            gap: 5%;
+        }
+        
+        .buttons button {
+            width: 45%;
+            outline: 0;
+            border: 0;
+            padding: 10px 20px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="header">
+        <a href="/tickets/tickets.html">
+            <span>&times;</span>
+        </a>
+        <div class="head">
+            <p>BILLIE BILISH HIT ME HARD AND SOFT...</p>
+            <span>Mon. May 5,7:00pm-Ziggo Dome,Amsterdam</sp>
+        </div>
+        <p></p>
+    </div>
+    <div class="container">
+        <div class="carousel" id="carousel">
+            <div class="carousel-item">
+                <div class="slide">
+                    <div class="topic">Standard Admission</div>
+                    
+                    <div class="segment">
+                        <div>
+                            <p>SEC</p>
+                            <span>104</span>
+        </div>
+        <div>
+            <p>ROW</p>
+            <span>5</span>
+        </div>
+        <div>
+            <p>SEAT</p>
+            <span>3</span>
+        </div>
+    </div>
+
+    <!-- <img src=" /images/assets//billy.png " alt=" "> -->
+
+    <div class="hero-event ">
+        <div class="check">&check;</div>
+        <p>BILLIE BILISH HIT ME HARD AND SOFT: THE TOUR</p>
+        <span>Mon. May 5,7:00pm <span></span> Ziggo Dome</span>
+    </div>
+    <p class="lower">Sent</p>
+    <div class="sub ">
+
+        <p>1 ticket sent</p>
+
+        <span>yourName name2 yourEmail@gmail.com <br> Waiting for recipient to claim</span>
+
+        <div class=" details ">
+            <a href="ticketDetails.html" style="text-decoration: none;">
+                <p>Cancel Transfer</p>
+            </a>
+        </div>
+        <div class="line2"></div>
+    </div>
+    </div>
+
+    <div class="scrolls">
+        <div class="scroll"></div>
+
+    </div>
+    <div class="buttons">
+        <button>Transfer</button>
+        <button>Sell</button>
+    </div>
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+        const carousel = document.getElementById('carousel');
+        const transfer = document.getElementById('transfer');
+        const view = document.getElementById('view');
+        const payment = document.getElementById('payment');
+        const pay = document.getElementById('pay');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        carousel.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
+            carousel.style.cursor = 'dragging';
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+            isDown = false;
+
+        });
+
+        carousel.addEventListener('mouseup', () => {
+            isDown = false;
+
+        });
+
+        transfer.addEventListener('click', (e) => {
+            e.stopPropagation();
+            view.style.display = 'block';
+            payment.style.display = 'none';
+        });
+
+        pay.addEventListener('click', (e) => {
+            e.stopPropagation();
+            view.style.display = 'none';
+            payment.style.display = 'block';
+
+        });
+
+        window.addEventListener('click', () => {
+            if (payment.style.display === 'block') {
+                payment.style.display = 'none';
+                view.style.display = 'block';
+            } else {
+                view.style.display = 'none';
+                payment.style.display = 'none';
+            }
+        });
+
+        view.addEventListener('click', (e) => e.stopPropagation());
+        payment.addEventListener('click', (e) => e.stopPropagation());
+
+        carousel.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 2; // sensitivity
+            carousel.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch Events
+        carousel.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
+        });
+
+        carousel.addEventListener('touchend', () => {
+            isDown = false;
+        });
+
+        carousel.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const x = e.touches[0].pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 2;
+            carousel.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+
+</body>
+
+
+</html>
+
+</html>
+
+</html>
+
+</html>
